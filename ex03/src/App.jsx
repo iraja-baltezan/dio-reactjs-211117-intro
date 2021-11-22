@@ -15,8 +15,6 @@ const App = ()=>{
         console.log(`hasCustomer: ${hasCustomer}`)
     }
 
-
-
     const renderShowCustomerHistory = ()=>(
         <section>
             <h3>Clique no botão abaixo para ver o histórico dos clientes.</h3>
@@ -37,14 +35,13 @@ const App = ()=>{
             <p><button onClick={onToggleHasCustomerButton}>Toggle has customer</button></p>
             <hr />
 
-            {hasCustomer ? renderShowCustomerHistory() : renderShowCustomerAdd() }
-
             {hasCustomer && (
                 <section>
-                    <h3>Clique no botão abaixo para ver o histórico dos clientes.</h3>
-                    {customerLogButton}
+                    <h3>Há clientes registrados!</h3>
                 </section>
             )}
+
+            {hasCustomer ? renderShowCustomerHistory() : renderShowCustomerAdd() }
         </div>
     )
 }
